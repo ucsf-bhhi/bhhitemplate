@@ -18,3 +18,5 @@ Imports:
   git2r,
   thematic,
   showtext
+URL: https://github.com/ucsf-bhhi/bhhitemplate
+BugReports: https://github.com/ucsf-bhhi/bhhitemplate/issues
