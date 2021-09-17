@@ -1,0 +1,62 @@
+---
+title: ""
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    css: styles.css
+    theme:
+      version: 5
+      bg: "#ffffff"
+      fg: "#000000"
+      primary: "#058488"
+      secondary: "#052049"
+      success: "#6EA400"
+      info: "#007cbe"
+      warning: "#f26d04"
+      danger: "#eb093c"
+      base_font: 
+        google: "Raleway"
+      code_font: "Cascadia Code"
+      heading_font:
+        google: "Montserrat"
+---
+
+```{r setup, include=FALSE}
+# set default chunk options
+knitr::opts_chunk$set(
+  # don't show code
+  echo = FALSE,
+  # don't show warnings
+  warning = FALSE,
+  # don't show messages
+  message = FALSE,
+  # use the ragg package to render figures
+  dev = "ragg_png",
+  # set default dpi for hi-res screens
+  dpi = 144
+)
+
+library(ggplot2)
+theme_set(
+  theme_minimal(base_family = "Libre Franklin") +
+    theme(
+      # disable in between gridlines
+      panel.grid.minor = element_blank(),
+      # set color of gridlines
+      panel.grid.major = element_line(color = "grey90")
+    )
+)
+
+# figures will use colors from document theme
+thematic::thematic_rmd(
+  font = "Libre Franklin",
+  sequential = thematic::sequential_gradient(fg_weight = 0, bg_weight = 1, fg_low = FALSE),
+  qualitative = c("#058488", "#052049", "#6EA400", "#007CBE", "#F26D04", "#EB093C")
+)
+```
+
+
+
+`r bhhitemplate::print_commit()`
